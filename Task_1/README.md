@@ -50,7 +50,7 @@ The “git merge” command is used to merge branch1 into master.<br>
 <br><br>
 
 
-***git log --oneline --all***
+***git log --oneline --all*** <br><br>
 The “git log” command is used to see the commit history in the current branch.<br>
 -- oneline : shows each commit on a single line. <br>
 --all : displays commit history on all branches. <br>
