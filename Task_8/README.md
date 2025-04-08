@@ -27,6 +27,8 @@ The pre-commit file is written as shown below in nano editor. <br>
 ***touch eslint.config.js <br>
 nano eslint.config*** <br>
 
+We create eslint.config.js file and open it in nano editor. <br>
+
 ![SS](Screenshots_8/git_8_2.png)
 <br><br>
 
