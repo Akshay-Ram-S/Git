@@ -17,18 +17,13 @@ Initial commit is made after initializing repository. <br>
 <br><br>
 
 ***git remote add origin https://github.com/Akshay-Ram-S/Git <br>
-git push -u origin master*** <br>
-
-We add the url of the repository to link it remotely and we push the initial commit to it. <br>
-
-![SS](Screenshots_9/git_9_8.png)
-<br><br>
-
-***git checkout -b new-branch <br>
+git push -u origin master <br>
+git checkout -b new-branch <br>
 echo "Content changed" >> file.txt <br>
 git add file.txt <br>
 git commit -m "Update file.txt"*** <br>
 
+We add the url of the repository to link it remotely and we push the initial commit to it. <br>
 We create new branch and modify the file content and commit it. <br>
 
 ![SS](Screenshots_9/git_9_2.png)
