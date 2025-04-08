@@ -2,7 +2,7 @@
 
 ## Objective
 
-To demonstrate how to clean up a commit history using Git's interactive rebase feature, which helps in maintaining a readable and organized project history.
+To use interactive rebase to tidy up your commit history.
 
 ## Commands
 
@@ -14,7 +14,7 @@ git commit -m "Initial commit"*** <br>
 
 We initialize a repository, add a text file and commit it. <br>
 
-
+![SS](Screenshots_5/git_5_1.png)
 <br><br>
 
 ***echo "First change" >> file.txt <br>
@@ -25,18 +25,19 @@ git add file.txt <br>
 git commit -m "Second change commit" <br>
 echo "Third change" >> file.txt <br>
 git add file.txt <br>
-git commit -m "Third change commit"*** <br>
+git commit -m "Third change commit" <br>
+git log --oneline*** <br>
 
 A series of commits are made.
 
-
+![SS](Screenshots_5/git_5_2.png)
 <br><br>
 
 ***git rebase -i HEAD~3*** <br>
 The above command opens up previous 3 commits in the editor. <br>
 
-
-<br><br>
+![SS](Screenshots_5/git_5_3.png)
+<br>
 
 We are using “squash” to combine the lastt commit with the immediate previous commit. <br>
 The following are the commands available: <br>
@@ -51,13 +52,13 @@ d, drop = remove commit <br>
 After changing the desired commands, we will save and exit the editor and another editor will be opened as shown below. <br>
 Here we can edit the commit messages if required. After editing/confirming, save the editor and close it. It will redirect you to the git bash terminal. <br>
 
-
+![SS](Screenshots_5/git_5_4.png)
 <br><br>
 
-***git log --oneline***
+***git log --oneline*** <br>
 Since we used the squash command, the "Third change commit" and "Second change commit" are converted into one single commit as "Combined commit". <br>
 
-
+![SS](Screenshots_5/git_5_5.png)
 <br><br>
 
 **Squashing** <br>
