@@ -5,32 +5,35 @@ To simulate a collaborative workflow with remote repositories.
 
 ## Commands
 
-***git init task_9 <br>
-cd task_9 <br>
-echo "Initial Content" > file.txt <br>
-git add file.txt <br>
-git commit -m "Initial Commit"*** <br>
-
+```bash
+git init task_9 
+cd task_9 
+echo "Initial Content" > file.txt 
+git add file.txt 
+git commit -m "Initial Commit"
+```
 Initial commit is made after initializing repository. <br>
 
 ![SS](Screenshots_9/git_9_1.png)
 <br><br>
 
-***git remote add origin https://github.com/Akshay-Ram-S/Git <br>
-git push -u origin master <br>
-git checkout -b new-branch <br>
-echo "Content changed" >> file.txt <br>
-git add file.txt <br>
-git commit -m "Update file.txt"*** <br>
-
+```bash
+git remote add origin https://github.com/Akshay-Ram-S/Git 
+git push -u origin master 
+git checkout -b new-branch 
+echo "Content changed" >> file.txt 
+git add file.txt 
+git commit -m "Update file.txt"
+```
 We add the url of the repository to link it remotely and we push the initial commit to it. <br>
 We create new branch and modify the file content and commit it. <br>
 
 ![SS](Screenshots_9/git_9_2.png)
 <br><br>
 
-***git push -u origin new-branch*** <br>
-
+```bash
+git push -u origin new-branch
+```
 We push the new-branch to git. <br>
 
 ![SS](Screenshots_9/git_9_3.png)
@@ -51,12 +54,11 @@ The code review process is carried out. Reviewers can comment on code changes an
 ![SS](Screenshots_9/git_9_6.png)
 <br><br>
 
-***git checkout master <br>
-git pull origin master*** <br>
-
+```bash
+git checkout master
+git pull origin master
+```
 The above commands are used to pull the merged changes locally. <br>
 
 ![SS](Screenshots_9/git_9_7.png)
-
-
 
