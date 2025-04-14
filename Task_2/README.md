@@ -13,7 +13,9 @@ We have added app.log file, temp.tmp file, main.txt file and .gitignore file to 
 <br><br>
 
 
-***git status*** <br>
+```bash
+git status
+```
 The “git status” command is used to display the state of the working directory and the staging area. <br>
 The main.txt and .gitignore files are only added whereas app.log and temp.tmp files are ignored.<br>
 
