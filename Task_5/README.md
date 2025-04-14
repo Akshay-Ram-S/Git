@@ -6,34 +6,38 @@ To use interactive rebase to tidy up your commit history.
 
 ## Commands
 
-***git init task_5 <br>
-cd task_5 <br>
-echo "Initial content" > file.txt <br>
-git add file.txt <br>
-git commit -m "Initial commit"*** <br>
-
+```bash
+git init task_5 
+cd task_5 
+echo "Initial content" > file.txt 
+git add file.txt
+git commit -m "Initial commit"*** 
+```
 We initialize a repository, add a text file and commit it. <br>
 
 ![SS](Screenshots_5/git_5_1.png)
 <br><br>
 
-***echo "First change" >> file.txt <br>
-git add file.txt <br>
-git commit -m "First change commit" <br>
-echo "Second change" >> file.txt <br>
-git add file.txt <br>
-git commit -m "Second change commit" <br>
-echo "Third change" >> file.txt <br>
-git add file.txt <br>
-git commit -m "Third change commit" <br>
-git log --oneline*** <br>
-
+```bash
+echo "First change" >> file.txt 
+git add file.txt 
+git commit -m "First change commit" 
+echo "Second change" >> file.txt
+git add file.txt
+git commit -m "Second change commit" 
+echo "Third change" >> file.txt
+git add file.txt 
+git commit -m "Third change commit"
+git log --oneline
+```
 A series of commits are made.
 
 ![SS](Screenshots_5/git_5_2.png)
 <br><br>
 
-***git rebase -i HEAD~3*** <br>
+```bash
+git rebase -i HEAD~3
+```
 The above command opens up previous 3 commits in the editor. <br>
 
 ![SS](Screenshots_5/git_5_3.png)
@@ -55,7 +59,9 @@ Here we can edit the commit messages if required. After editing/confirming, save
 ![SS](Screenshots_5/git_5_4.png)
 <br><br>
 
-***git log --oneline*** <br>
+```bash
+git log --oneline
+```
 Since we used the squash command, the "Third change commit" and "Second change commit" are converted into one single commit as "Combined commit". <br>
 
 ![SS](Screenshots_5/git_5_5.png)
