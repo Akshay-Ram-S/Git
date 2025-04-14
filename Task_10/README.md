@@ -6,58 +6,63 @@ To simulate an advanced Git scenario that includes forced pushes, recovering los
 
 ## Commands
 
-***git init task_10 <br>
-cd task_10 <br>
-echo "Initial commit" > file.txt <br>
-git add file.txt <br>
-git commit -m "Initial commit on master branch"*** <br>
-
+```bash
+git init task_10 
+cd task_10 
+echo "Initial commit" > file.txt 
+git add file.txt 
+git commit -m "Initial commit on master branch"
+```
 Initialized a repository, added file.txt and made on commit on it. <br>
 
 ![SS](Screenshots_10/git_10_1.png)
 <br><br>
 
-***git remote add origin https://github.com/Akshay-Ram-S/Test.git <br>
-git checkout -b feature <br>
-echo "Feature implementation" > feature.txt <br>
-git add feature.txt <br>
-git commit -m "Add feature"*** <br>
-
+```bash
+git remote add origin https://github.com/Akshay-Ram-S/Test.git 
+git checkout -b feature 
+echo "Feature implementation" > feature.txt
+git add feature.txt 
+git commit -m "Add feature"
+```
 Add the origin and give the github link to store repository. <br>
 Created "feature" branch, added feature.txt and made commit. <br>
 
 ![SS](Screenshots_10/git_10_2.png)
 <br><br>
 
-***git checkout master <br>
-git checkout -b bug-fix <br>
-echo "Bug fix implementation" > bug-fix.txt <br>
-git add bug-fix.txt <br>
-git commit -m "Fix bug"*** <br>
-
+```bash
+git checkout master 
+git checkout -b bug-fix 
+echo "Bug fix implementation" > bug-fix.txt 
+git add bug-fix.txt 
+git commit -m "Fix bug"
+```
 Created "bug-fix" branch, added bug-fix.txt and made commit. <br>
 
 ![SS](Screenshots_10/git_10_3.png)
 <br><br>
 
-***git checkout master <br>
-git checkout -b release <br>
-echo "Release notes" > release.txt <br>
-git add release.txt <br>
-git commit -m "Release notes commit"*** <br>
-
+```bash
+git checkout master 
+git checkout -b release
+echo "Release notes" > release.txt
+git add release.txt 
+git commit -m "Release notes commit"
+```
 Created "release" branch, added release.txt and made commit. <br>
 
 ![SS](Screenshots_10/git_10_4.png)
 <br><br>
 
-***git push -u origin feature <br>
-git checkout feature <br>
-echo "Feature complete" >> feature.txt <br>
-git add feature.txt <br>
-git commit -m "Feature complete" <br>
-git rebase -i HEAD~2*** <br>
-
+```bash
+git push -u origin feature 
+git checkout feature 
+echo "Feature complete" >> feature.txt 
+git add feature.txt 
+git commit -m "Feature complete" 
+git rebase -i HEAD~2
+```
 Switched to feature branch, made changes in feature.txt and made commit. <br>
 
 ![SS](Screenshots_10/git_10_5.png)
@@ -70,9 +75,10 @@ The rebase opens and we change the second commit as "squash" to combine both com
 
 **Forced Push :** <br>
 
-***git push -u origin feature <br>
-git push --force origin feature*** <br>
-
+```bash
+git push -u origin feature 
+git push --force origin feature
+```
 Since we’ve rewritten history, Git will not allow a regular push and will instead require a forced push as we can see below. <br>
 The --force option for git push allows you to override this rule: the commit history on the remote will be forcefully overwritten with your own local history. <br>
 
@@ -81,31 +87,34 @@ The --force option for git push allows you to override this rule: the commit his
 
 **Simulate a mistake and recover lost commit :** <br>
 
-***git checkout master <br>
-echo "Second commit" >> file.txt <br>
-git add file.txt <br>
-git commit -m "Second commit" <br>
-git reset --hard HEAD~1 <br>
-git push --force origin master*** <br>
-
+```bash
+git checkout master
+echo "Second commit" >> file.txt 
+git add file.txt 
+git commit -m "Second commit" 
+git reset --hard HEAD~1 
+git push --force origin master
+```
 We make a commit again so that now we have two commits. The "git reset --hard HEAD~1" command is used to revert back one commit. The last commit is gone, and the history has been rewritten and pushed. <br>
 The force push is a dangerous operation, as any changes that others may have made are now lost and rewritten
 
 ![SS](Screenshots_10/git_10_8.png)
 <br><br>
 
-***git reflog*** <br>
-
+```bash
+git reflog
+``` 
 The reflog is a powerful tool for maintaining a safety net in your Git repository and recovering from various accidental or unexpected changes, such as those times when you need to recover lost commits or branches and have lost track of your Git history. <br>
 
 ![SS](Screenshots_10/git_10_9.png)
 <br><br>
 
-***git checkout HEAD@{1} <br>
-git checkout -b recover-branch <br>
-git push origin recover-branch <br>
-git log --oneline*** <br>
-
+```bash
+git checkout HEAD@{1} 
+git checkout -b recover-branch
+git push origin recover-branch 
+git log --oneline
+```
 The "git checkout HEAD@{1}" is used to recover the commit we want. <br>
 Create a new branch with the recover commit and push it to the repository. <br>
 The "git log" command is used to verify the commits. <br>
